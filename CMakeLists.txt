@@ -10,6 +10,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Corrosion)
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
+
 corrosion_import_crate(MANIFEST_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Cargo.toml" CRATES corrosion-bug )
 
 install(FILES $<TARGET_FILE:corrosion-bug-shared> TYPE LIB)
